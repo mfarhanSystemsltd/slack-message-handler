@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 import org.jboss.logging.Logger;
 import org.jboss.resteasy.reactive.server.ServerResponseFilter;
 
+import io.smallrye.common.annotation.Blocking;
 import io.smallrye.mutiny.Uni;
 
 @Path("/releaseApp")
@@ -21,6 +22,7 @@ public class SlackMessageResource {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
+    @Blocking
     public String releaseApplication() {
         return "{\"message\":\"ok\"}";
     }
