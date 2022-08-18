@@ -52,6 +52,7 @@ public class SlackMessageResource {
                 msg.cluster = values[3];
                 msg.gitRevision = "main";
                 msg.gitURL = "https://github.com/gnunn-gitops/product-catalog";
+                msg.gitSourceURL = "https://github.com/gnunn-gitops/product-catalog-" + msg.application;
 
                 pipelineService.startPipeline(msg);
                 LOG.info("Start message sent to trigger: "+msg.toString());

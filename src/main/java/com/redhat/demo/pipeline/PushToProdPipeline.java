@@ -7,6 +7,9 @@ public class PushToProdPipeline {
     @JsonProperty("git-url")
     public String gitURL;
 
+    @JsonProperty("git-source-url")
+    public String gitSourceURL;
+
     @JsonProperty("git-revision")
     public String gitRevision;
 
@@ -23,6 +26,6 @@ public class PushToProdPipeline {
 
     @Override
     public String toString() {
-        return gitRevision + "," + application +", " + cluster +", " + imageURL + ", " + imageTag;
+        return gitURL+ ", " + gitRevision + "," + application +", " + cluster +", " + imageURL + ", " + imageTag;
     }
 }
