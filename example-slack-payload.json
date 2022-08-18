@@ -1,0 +1,114 @@
+{
+  "type" : "block_actions",
+  "user" : {
+    "id" : "U01D65ZJNE5",
+    "username" : "gerald.b.nunn",
+    "name" : "gerald.b.nunn",
+    "team_id" : "T01CQE9BMAR"
+  },
+  "api_app_id" : "A01SNV8LBHN",
+  "token" : "ZLpV6awdECKrUBsxkojkIlx1",
+  "container" : {
+    "type" : "message",
+    "message_ts" : "1660616444.446799",
+    "channel_id" : "C01JVR9BEF4",
+    "is_ephemeral" : false
+  },
+  "trigger_id" : "3944019108723.1432485395365.718d869ab16fe5ae3ce6cefa6073787b",
+  "team" : {
+    "id" : "T01CQE9BMAR",
+    "domain" : "lab-notifications"
+  },
+  "enterprise" : null,
+  "is_enterprise_install" : false,
+  "channel" : {
+    "id" : "C01JVR9BEF4",
+    "name" : "deployments"
+  },
+  "message" : {
+    "type" : "message",
+    "subtype" : "bot_message",
+    "text" : "This content can't be displayed.",
+    "ts" : "1660616444.446799",
+    "bot_id" : "B01RJCDDFU7",
+    "blocks" : [ {
+      "type" : "header",
+      "block_id" : "ypCn8",
+      "text" : {
+        "type" : "plain_text",
+        "text" : "Server Pipeline Complete",
+        "emoji" : true
+      }
+    }, {
+      "type" : "section",
+      "block_id" : "7FED",
+      "text" : {
+        "type" : "mrkdwn",
+        "text" : "Server pipeline for image d54ff71-2118238063 has completed",
+        "verbatim" : false
+      }
+    }, {
+      "type" : "divider",
+      "block_id" : "0zQ"
+    }, {
+      "type" : "section",
+      "block_id" : "YY1n",
+      "text" : {
+        "type" : "mrkdwn",
+        "text" : "*Pipeline Results*",
+        "verbatim" : false
+      }
+    }, {
+      "type" : "section",
+      "block_id" : "JuBG",
+      "text" : {
+        "type" : "mrkdwn",
+        "text" : "* <quay.io/gnunn/server:d54ff71-2118238063|Quay Image>\n* <https://central.stackrox.svc:443/main/vulnerability-management/images/sha256:897ffc9d7f2932c17600e9a453dd28d5345aeff84c2fed8f27098d2caec30f0d|ACS Scan>\n* <https://sonarqube-dev-tools.apps.home.ocplab.com/dashboard?id=product-catalog-server|SonarQube>",
+        "verbatim" : false
+      }
+    }, {
+      "type" : "divider",
+      "block_id" : "DL3oQ"
+    }, {
+      "type" : "section",
+      "block_id" : "fzU7",
+      "text" : {
+        "type" : "mrkdwn",
+        "text" : "To push this image to production run the following command to generate a pull request:\n&gt;tkn pipeline start push-prod-pr --use-param-defaults --prefix-name server -p git_source_url=<https://github.com/gnunn-gitops/product-catalog-server> -p git_revision=main -p image_dest_tag=d54ff71-2118238063 -p image_dest_url=<http://quay.io/gnunn/server|quay.io/gnunn/server> -p cluster=local.home -p app=server -s github-pipeline -w name=acs-central,secret=roxsecrets -w name=gitops-manifests,claimName=gitops-manifests",
+        "verbatim" : false
+      }
+    }, {
+      "type" : "divider",
+      "block_id" : "ryVX0"
+    }, {
+      "type" : "actions",
+      "block_id" : "Hl7S",
+      "elements" : [ {
+        "type" : "button",
+        "action_id" : "wquq5",
+        "text" : {
+          "type" : "plain_text",
+          "text" : "Build Application",
+          "emoji" : true
+        },
+        "value" : "server,quay.io/gnunn/server,d54ff71-2118238063,local.home"
+      } ]
+    } ]
+  },
+  "state" : {
+    "values" : { }
+  },
+  "response_url" : "https://hooks.slack.com/actions/T01CQE9BMAR/3937516164678/cfrPzo3tP0vo0GwSCkQaLlQo",
+  "actions" : [ {
+    "action_id" : "wquq5",
+    "block_id" : "Hl7S",
+    "text" : {
+      "type" : "plain_text",
+      "text" : "Build Application",
+      "emoji" : true
+    },
+    "value" : "server,quay.io/gnunn/server,d54ff71-2118238063,local.home",
+    "type" : "button",
+    "action_ts" : "1660616478.047567"
+  } ]
+}
