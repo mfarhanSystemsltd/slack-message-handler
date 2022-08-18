@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PushToProdPipeline {
     
-    @JsonProperty("gitrevision")
+    @JsonProperty("git-url")
+    public String gitURL;
+
+    @JsonProperty("git-revision")
     public String gitRevision;
 
     @JsonProperty("app")
@@ -18,4 +21,8 @@ public class PushToProdPipeline {
     @JsonProperty("image_dest_tag")
     public String imageTag;
 
+    @Override
+    public String toString() {
+        return gitRevision + "," + application +", " + cluster +", " + imageURL + ", " + imageTag;
+    }
 }

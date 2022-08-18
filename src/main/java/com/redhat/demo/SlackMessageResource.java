@@ -43,7 +43,7 @@ public class SlackMessageResource {
             
             if (result.isPresent()) {
                 String value = result.get().getValue().toString();
-                LOG.infof("Value is %s", value);
+                //LOG.infof("Value is %s", value);
                 String[] values = value.split(",");
                 PushToProdPipeline msg = new PushToProdPipeline();
                 msg.application = values[0];
@@ -51,7 +51,10 @@ public class SlackMessageResource {
                 msg.imageTag = values[2];
                 msg.cluster = values[3];
                 msg.gitRevision = "main";
+                msg.gitURL = "https://github.com/gnunn-gitops/product-catalog";
+
                 pipelineService.startPipeline(msg);
+                LOG.info("Start message sent to trigger: "+msg.toString());
             } else {
                 LOG.info("No value found");
                 LOG.info(json.encodePrettily()); 
