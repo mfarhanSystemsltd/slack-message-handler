@@ -4,13 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PushToProdPipeline {
     
-    @JsonProperty("git-url")
+    @JsonProperty("git_url")
     public String gitURL;
 
-    @JsonProperty("git-source-url")
+    @JsonProperty("git_source_url")
     public String gitSourceURL;
 
-    @JsonProperty("git-revision")
+    @JsonProperty("git_revision")
     public String gitRevision;
 
     @JsonProperty("app")
